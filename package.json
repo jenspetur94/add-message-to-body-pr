@@ -1,0 +1,24 @@
+{
+  "name": "add-message-to-body-pr",
+  "version": "1.0.0",
+  "description": "Git action for adding a standard message to the body of all pr's",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenspetur94/add-message-to-body-pr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenspetur94/add-message-to-body-pr/issues"
+  },
+  "homepage": "https://github.com/jenspetur94/add-message-to-body-pr#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.2",
+    "@actions/github": "^2.1.1"
+  }
+}

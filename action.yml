@@ -1,0 +1,12 @@
+name: 'Add text to body of pr'
+description: 'Adds a message to body of pr'
+inputs:
+  repo-token:
+    description: 'The GITHUB_TOKEN secret'
+    required: true
+  msg:
+    description: 'Message to add'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
