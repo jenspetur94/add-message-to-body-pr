@@ -11,13 +11,7 @@ inputs:
     description: 'Regex to compare pr title with'
     required: false
     default: ''
-jobs:
-  add-message-to-description:
-    runs:
-      using: 'node12'
-      main: 'messageToDescription.js'
-  compare-title-with-regex:
-    if: title-regex != ''
-    runs:
-      using: 'node12'
-      main: 'compareRegex.js'
+
+runs:
+  using: 'node12'
+  main: 'index.js'
