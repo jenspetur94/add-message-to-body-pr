@@ -7,6 +7,17 @@ inputs:
   msg:
     description: 'Message to add'
     required: true
-runs:
-  using: 'node12'
-  main: 'index.js'
+  title-regex:
+    description: 'Regex to compare pr title with'
+    required: false
+    default: ''
+jobs:
+  add-message-to-description:
+    run:
+      using: 'node12'
+      main: 'messageToDescription.js'
+  compare-title-with-regex:
+    if: title-regex != ''
+    run:
+      using: 'node12'
+      main: 'compareRegex.js'

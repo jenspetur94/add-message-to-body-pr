@@ -6,7 +6,8 @@ jobs:
   add_msg:
     runs-on: ubuntu-latest
     steps:
-      - uses: jenspetur94/add-message-to-body-pr@v0.1
+      - uses: ./
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           msg: 'message to be added'
+          regex: 'PROJ-\d+ :.*'
