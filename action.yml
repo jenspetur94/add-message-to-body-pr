@@ -13,11 +13,11 @@ inputs:
     default: ''
 jobs:
   add-message-to-description:
-    run:
+    runs:
       using: 'node12'
       main: 'messageToDescription.js'
   compare-title-with-regex:
     if: title-regex != ''
-    run:
+    runs:
       using: 'node12'
       main: 'compareRegex.js'
