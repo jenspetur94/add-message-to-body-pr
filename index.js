@@ -15,6 +15,7 @@ async function run(){
 		}
 		const currentBody = github.context.payload.pull_request.body;
 		const shouldUpdateBody = !currentBody.includes(inputs.msg);
+		
 		if(shouldUpdateBody){
 			request.body = currentBody.concat('\n\n', inputs.msg);
 			core.debug(`Added ${inputs.msg} to end of body.`)
