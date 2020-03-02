@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-async function messageToDescription(token, msg){
+export async function messageToDescription(token, msg){
 	const request = {
 		owner: github.context.repo.owner,
 		repo: github.context.repo.repo,
