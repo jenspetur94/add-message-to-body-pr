@@ -1,6 +1,8 @@
 # Add a message to the body of a PR via GitHub Action
 
 A GitHub action for automatically adding a message to the end of a PR's body
+The action is heavily inspired by https://github.com/tzkhan/pr-update-action.
+I created this one because i needed a simpler use case myself.
 
 ## Usage
 
