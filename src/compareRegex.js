@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-export async function run(token, regex){
+exports.run = async function (token, regex){
 	const request = {
 		owner: github.context.repo.owner,
 		repo: github.context.repo.repo,
