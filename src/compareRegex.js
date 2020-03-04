@@ -12,8 +12,11 @@ exports.run = async function (token, regex){
 		const titleIsValid = regex.test(currentTitle);
 		if(!titleIsValid){
 			core.error(`Title did not match patter: ${regex.toString()}`);
+			core.setFailed(`Title did not match patter: ${regex.toString()}`);
+			return;
 		}
 		core.endGroup();
+		return;
 	}catch(error){
 		core.error(error);
 		core.setFailed(error.message);

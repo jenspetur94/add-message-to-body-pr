@@ -27,8 +27,11 @@ exports.run = async function (token, msg){
 			core.error('Failed to update pull request');
 		}
 		core.endGroup();
+		return;
 	}catch(error){
 		core.error(error);
 		core.setFailed(error.message);
+		return;
 	}
 }
+
