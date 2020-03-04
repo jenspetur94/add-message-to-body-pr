@@ -9,9 +9,9 @@ async function run(){
 			msg: core.getInput('msg', {required: true}),
 			regex: new RegExp(core.getInput('regex', {required: false}))
 		};
-		await messageToDescription(token, msg);
-		if(regex !== ''){
-			await compareRegex(regex);
+		await messageToDescription(inputs.token, inputs.msg);
+		if(inputs.regex !== ''){
+			await compareRegex(inputs.regex);
 		}
 	}
 	catch(error){
