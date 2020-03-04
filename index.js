@@ -3,6 +3,7 @@ const github = require('@actions/github');
 
 
 async function run(){
+	//lille ændring
 	try{
 		const inputs = {
 			token: core.getInput('repo-token', {required: true}),
