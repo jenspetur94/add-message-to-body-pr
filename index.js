@@ -1,6 +1,8 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
+await run()
+
 async function run(){
 	try{
 		const inputs = {
@@ -63,4 +65,3 @@ async function compareRegex(token, regex){
 	return;
 }
 
-run()
