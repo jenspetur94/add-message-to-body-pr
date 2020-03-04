@@ -7,7 +7,7 @@ async function run(){
 		const inputs = {
 			token: core.getInput('repo-token', {required: true}),
 			msg: core.getInput('msg', {required: true}),
-			regex: new Regex(core.getInput('regex', {required: false}))
+			regex: new RegExp(core.getInput('regex', {required: false}))
 		};
 		await messageToDescription(token, msg);
 		if(regex !== ''){
