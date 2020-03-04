@@ -40,11 +40,10 @@ async function messageToDescription(token, msg){
 	const client = new github.GitHub(token);
 	const response = await client.pulls.update(request);
 	
-	core.info(`response: ${response.status}`);
 	if(response.status !== 200){
 		core.error('Failed to update pull request');
 	}
-	core.debug('description was updated successfully!');
+	core.info('description was updated successfully!');
 	return;
 }
 
@@ -57,11 +56,12 @@ async function compareRegex(regex){
 	const currentTitle = github.context.payload.pull_request.title;
 	const titleIsValid = currentTitle.match(regex);
 	// const titleIsValid = regex.test(currentTitle);
+	core.info(currentTitle);
 	if(!titleIsValid){
 		core.error(`Title did not match patter: ${regex.toString()}`);
 		throw new Error(`Title did not match patter: ${regex.toString()}`);
 	}
-	core.debug('Title matched the pattern!');
+	core.info('Title matched the pattern!');
 	return;
 }
 
