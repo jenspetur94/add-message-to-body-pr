@@ -1,6 +1,8 @@
 name: add-message-to-pr
 
-on: pull_request
+on: 
+  pull_request:
+    types: [edited, opened]
 
 jobs:
   add_msg:
