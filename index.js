@@ -1,7 +1,6 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-await run()
 
 async function run(){
 	try{
@@ -37,7 +36,7 @@ async function messageToDescription(token, msg){
 		core.warning('Body contains message. Body was not updated');
 		return;
 	}
-
+	
 	const client = new github.GitHub(token);
 	const response = await client.pulls.update(request);
 	
@@ -65,3 +64,4 @@ async function compareRegex(token, regex){
 	return;
 }
 
+run();
