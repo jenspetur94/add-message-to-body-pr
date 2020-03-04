@@ -48,7 +48,7 @@ async function messageToDescription(token, msg){
 	return;
 }
 
-async function compareRegex(token, regex){
+async function compareRegex(regex){
 	const request = {
 		owner: github.context.repo.owner,
 		repo: github.context.repo.repo,
