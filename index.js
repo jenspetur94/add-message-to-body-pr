@@ -7,7 +7,7 @@ async function run(){
 		const inputs = {
 			token: core.getInput('repo-token', {required: true}),
 			msg: core.getInput('msg', {required: true}),
-			regex: new RegExp(core.getInput('regex', {required: false}))
+			regex: new RegExp(core.getInput('regex', {required: false}, g))
 		};
 		await messageToDescription(inputs.token, inputs.msg);
 		if(inputs.regex !== ''){
@@ -55,7 +55,8 @@ async function compareRegex(regex){
 		pull_number: github.context.payload.pull_request.number
 	}
 	const currentTitle = github.context.payload.pull_request.title;
-	const titleIsValid = regex.test(currentTitle);
+	const titleIsValid = currentTitle.match(regex);
+	// const titleIsValid = regex.test(currentTitle);
 	if(!titleIsValid){
 		core.error(`Title did not match patter: ${regex.toString()}`);
 		throw new Error(`Title did not match patter: ${regex.toString()}`);
