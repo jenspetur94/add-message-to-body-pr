@@ -1,8 +1,8 @@
-import { compareRegex } from './src/compareRegex';
-import { messageToDescription } from './src/messageToDescription;'
 
 const core = require('@actions/core');
 const github = require('@actions/github');
+const compareRegex = require('./src/compareRegex');
+const messageToDescription = require('./src/messageToDescription');
 
 
 async function run(){
@@ -13,11 +13,12 @@ async function run(){
 			regex: core.getInput('regex', {required: false})
 		};
 
-		core.group('addMessage', messageToDescription(inputs.token, inputs.msg));
+		core.group('addMessage', messageToDescription.run(inputs.token, inputs.msg));
+		core.group('compareRegex', compareRegex.run(inputs.token, inputs.regex))
 		core.startGroup('addMessage')
 
 		if(regex !== ''){
-			core.group('compareRegex', compareRegex(inputs.token, inputs.regex))
+			core.startGroup('compareRegex');
 		}
 
 	}

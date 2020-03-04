@@ -1,7 +1,7 @@
 const core = require('@actions/core');
 const github = require('@actions/github');
 
-export async function compareRegex(token, regex){
+export async function run(token, regex){
 	const request = {
 		owner: github.context.repo.owner,
 		repo: github.context.repo.repo,
@@ -12,7 +12,5 @@ export async function compareRegex(token, regex){
 	if(!titleIsValid){
 		core.error(`Title did not match patter: ${regex.toString()}`);
 	}
-
+	core.endGroup();
 }
-
-run()
