@@ -14,8 +14,8 @@ async function run(){
 		};
 
 		core.group('addMessage', messageToDescription.run(inputs.token, inputs.msg));
-		core.group('compareRegex', compareRegex.run(inputs.token, inputs.regex))
-		core.startGroup('addMessage')
+		core.group('compareRegex', compareRegex.run(inputs.token, inputs.regex));
+		core.startGroup('addMessage');
 
 		if(regex !== ''){
 			core.startGroup('compareRegex');
