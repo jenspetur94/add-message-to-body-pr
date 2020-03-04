@@ -10,7 +10,7 @@ async function run(){
 		const inputs = {
 			token: core.getInput('repo-token', {required: true}),
 			msg: core.getInput('msg', {required: true}),
-			regex: core.getInput('regex', {required: false})
+			regex: new Regex(core.getInput('regex', {required: false}))
 		};
 
 		core.group('addMessage', messageToDescription.run(inputs.token, inputs.msg));
