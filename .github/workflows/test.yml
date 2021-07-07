@@ -1,12 +1,18 @@
 name: add-message-to-pr
 
-on: pull_request
+on: 
+  pull_request:
+    types: [edited, opened, synchronize]
 
 jobs:
   add_msg:
     runs-on: ubuntu-latest
     steps:
-      - uses: jenspetur94/add-message-to-body-pr@v0.1
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: pr-utility-action
+        uses: ./
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
           msg: 'message to be added'
+          regex: 'PROJ-\d+ :.*'

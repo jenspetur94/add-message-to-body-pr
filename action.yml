@@ -7,6 +7,11 @@ inputs:
   msg:
     description: 'Message to add'
     required: true
+  title-regex:
+    description: 'Regex to compare pr title with'
+    required: false
+    default: ''
+
 runs:
   using: 'node12'
   main: 'index.js'
